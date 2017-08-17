@@ -1,9 +1,12 @@
-<h1>List of scientists</h1>
 
-<ul>
-  {{#each model as |scientist|}}
-    <li>{{scientist}}</li>
-  {{/each}}
-</ul>
+{{people-list title="List of Scientists" people}}
+
+<form {{action "addPerson" model on="submit"}}>
+  <h4>add a scientist:</h4>
+
+  <p>name:</p>{{input type="text" value=model.name}}
+
+  <button type="submit">save name</button>
+</form>
 
 {{outlet}}
