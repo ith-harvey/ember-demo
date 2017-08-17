@@ -4,7 +4,14 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'ember-quickstart',
-    environment,
+    environment: environment,
+    contentSecurityPolicy: {'connect-src': "'self' wss://*.firebaseio.com"},
+    firebase: {
+      apiKey: 'AIzaSyD4gt0SqcX0D-Vaa46bG6uY7qc64RLcaZg',
+      authDomain: "ember-demo-95b19.firebaseapp.com",
+      databaseURL: 'https://ember-demo-95b19.firebaseio.com/',
+      storageBucket: 'ember-demo-95b19.appspot.com',
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
