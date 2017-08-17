@@ -1,17 +1,29 @@
+<div class="container">
+  {{outlet}}
+  <div class="col s6 offset-s3">
+    <ul class="collection with-header">
+      <li class="collection-header"><h4>Scientists</h4></li>
+      {{#each model as |scientist|}}
+        <li class="collection-item">{{scientist.name}}</li>
+      {{/each}}
+    </ul>
+  </div>
 
-{{outlet}}
-<ul>
-  {{#each model as |scientist|}}
-  <li>{{scientist.name}}</li>
-  {{/each}}
-</ul>
+  <form {{action "addPerson" name on="submit"}}>
+    <div class="row valign-wrapper">
+      <div class="col s3">
+      <h5>add a scientist:</h5>
+      </div>
+      <div class="input-field col s6">
+        {{input type="text" value=name id="name"}}
+        <label for="name">scientist name</label>
+      </div>
+      <div class="col s3">
+        <button class="waves-effect btn"type="submit">save name</button>
+      </div>
+    </div>
 
-<form {{action "addPerson" name on="submit"}}>
-  <h4>add a scientist:</h4>
+  </form>
 
-  <p>name:</p>{{input type="text" value=name}}
-
-  <button type="submit">save name</button>
-</form>
-
-{{outlet}}
+  {{outlet}}
+</div>
